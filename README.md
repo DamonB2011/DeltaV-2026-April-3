@@ -1,5 +1,5 @@
 # DeltaV-2026-April-5
-Note:The live demo link is currently inactive to minimize cloud hosting and domain costs. This repository serves as the complete source code archive and also a way to document my own coding journey.
+Note: The live demo link is currently inactive to minimize cloud hosting and domain costs. This repository serves as the complete source code archive and documents my personal coding journey. The ZIP archive contains the full source code used to build the website, while the .skill file preserves the Agent State. This file captures the AI's learned context and logic, essentially allowing me (or you) to "download" its consciousness and development history from any session and paste it into the AI whenever I'd like to use it for something akin to this project.
 
 Hi GitHub, this is my first project on this website. I am a student developer exploring the intersection of physics and code. With the help of AI-accelerated workflows(Manus.AI), this is my first tool that can solve real-world engineering problems. The point of this mini-project was to help me explore Applied Mathematics and learn code and I plan to make more websites in the future.
 
