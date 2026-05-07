@@ -30,7 +30,7 @@ The biggest challenge was making the data accurate despite shaky hands or low-qu
 ### How I Built It
 Since this was my first deep dive into full-stack development, I used an AI-assisted workflow (Manus.AI) to help me architect the system. This process taught me how to connect a Python math engine to a modern web interface and how to handle complex database issues like asynchronous processing.
 
-# VEX V5RC May 7th 2026: Override Concept Bot By Team 1509R 🤖
+# VEX V5RC May 7th 2026: Override Concept Bot By Team 1509R 🤖 (go to branch "Modeling-Based-Projects" and click the "1509R - May 7th 2026 mhtml" document to view the progress of the robot as of May 7th 2026)
 
 [![Game Mode: Override](https://shields.io)](https://vexrobotics.com)
 [![Platform: V5](https://shields.io)]()
