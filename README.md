@@ -35,7 +35,7 @@ Since this was my first deep dive into full-stack development, I used an AI-assi
 
 [![Game Mode: Override](https://shields.io)](https://vexrobotics.com)
 [![Platform: V5](https://shields.io)]()
-[![Status: Concept/Final Assembly](https://shields.io)]()
+[![Status: Concept/WIP (Work in Progress)]([https://shields.io](https://cad.onshape.com/documents/1adbd9bc1c73c2427d1771a0/w/e842d6b7500cc3935959ca32/e/5a69c71ebb3461d94fe6e010))]()
 
 A high-performance, symmetrical robot design for the 2026 VEX Robotics Competition season. This project focuses on vertical dominance via a mirrored DR4B lift and a multi-modal intake system.
 
