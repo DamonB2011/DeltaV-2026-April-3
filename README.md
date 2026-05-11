@@ -1,5 +1,4 @@
 # DeltaV: AI-Powered Kinematics Engine
-https://deltavkin-vg4iuiub.manus.space
 
 > Upload a physics video. Get back motion graphs in real-world units.
 
@@ -7,6 +6,12 @@ https://deltavkin-vg4iuiub.manus.space
 ![Python](https://img.shields.io/badge/python-3.x-blue)
 ![React](https://img.shields.io/badge/react-19-61DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-backend-3178C6)
+
+![DeltaV Landing](https://github.com/user-attachments/assets/73260dd7-dfd1-44e8-b465-4625dce9c896)
+
+![DeltaV Kinematics](https://github.com/user-attachments/assets/10c86c08-3f51-4de0-b3aa-0a46e0521a24)
+
+![DeltaV Analysis](https://github.com/user-attachments/assets/79e73f58-8068-4d49-a462-dcbb80bbfe4c)
 
 ---
 
@@ -83,4 +88,4 @@ The interesting problems here were not the math concepts themselves but making t
 
 ## About
 
-Built by Youbo (Damon) Bao, a student developer at Ridley College interested in applied physics and engineering.
+Built by Youbo (Damon) Bao, a student developer at Ridley College interested in applied physics and software engineering.
