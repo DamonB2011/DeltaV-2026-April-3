@@ -1,34 +1,87 @@
-# DeltaV-2026-April-5 (The links to this project is DeltaV_MegaFile.zip and deltav-kinematics.skill)
+# DeltaV — AI-Powered Kinematics Engine
 
-Note: The live demo link is currently inactive to minimize cloud hosting and domain costs. This repository serves as the complete source code archive and documents my personal coding journey. The ZIP archive contains the full source code used to build the website, while the .skill file preserves the Agent State. This file captures the AI's learned context and logic, essentially allowing me (or you) to "download" its consciousness and development history from any session and paste it into the AI whenever I'd like to use it for something akin to this project.
+> Turn any physics video into accurate motion graphs — automatically.
 
-Hi GitHub, this is my first project on this website. I am a student developer exploring the intersection of physics and code. With the help of AI-accelerated workflows(Manus.AI), this is my first tool that can solve real-world engineering problems. The point of this mini-project was to help me explore Applied Mathematics and learn code and I plan to make more websites in the future.
-
-# DeltaV: AI-Powered Kinematics Engine
-
-### Project Status: Archived
-Note: The live website is currently offline to save on cloud hosting costs. This repository contains the complete source code, which you can download and run locally on your own computer.
+![Project Status](https://img.shields.io/badge/status-archived-lightgrey)
+![Python](https://img.shields.io/badge/python-3.x-blue)
+![React](https://img.shields.io/badge/react-19-61DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-backend-3178C6)
 
 ---
 
-### About the Project
-Hi! I am a Grade 9 student, and DeltaV is my first full-stack engineering project. I wanted to build a tool that could take a regular video of a physics experiment (like a ball throw) and automatically turn it into accurate graphs, replacing the need for manual stopwatches and rulers.
+## What It Does
 
-### The Physics and Math
-The biggest challenge was making the data accurate despite shaky hands or low-quality video. Here is the math I implemented to solve that:
+DeltaV takes a regular video of a physics experiment — a ball throw, a pendulum, a rolling object — and automatically extracts real-world motion data from it. Instead of manually timing with stopwatches or measuring with rulers, you upload a video and get back synchronized velocity and acceleration graphs in real-world units.
 
-*   Computer Vision: I used OpenCV to track objects. Instead of just looking for color, I used algorithms (CSRT/MOG2) that can follow the object's center of mass.
-*   Smoothing the Data: Raw video data is really noisy. I applied a Savitzky-Golay filter to smooth out the jitters so the acceleration graphs look clean and realistic.
-*   Calculus: The code performs Numerical Differentiation to calculate exactly how fast the object is moving (velocity) and accelerating frame-by-frame.
-*   Calibration: I built a "Pixels-to-Meters" feature so the output is in real-world units, not just pixels.
+The core problem it solves: **raw video data is noisy and pixel-based.** DeltaV handles both.
 
-### Tech Stack
-*   Engine: Python (NumPy, SciPy for the math)
-*   Frontend: React 19 and Tailwind 4 (for the UI)
-*   Backend: TypeScript and MySQL
-*   Visualization: Plotly.js (for the synchronized charts)
+---
 
-### How I Built It
-Since this was my first deep dive into full-stack development, I used an AI-assisted workflow (Manus.AI) to help me architect the system. This process taught me how to connect a Python math engine to a modern web interface and how to handle complex database issues like asynchronous processing.
+## The Physics & Math
 
+The engineering challenge was making the output accurate despite shaky footage, low resolution, and inconsistent lighting. Here is how each problem was solved:
 
+**Object Tracking**
+Used OpenCV with CSRT and MOG2 algorithms to track an object's center of mass frame-by-frame — more robust than simple color detection, which fails under changing light conditions.
+
+**Noise Reduction**
+Raw tracking data contains significant jitter. Applied a Savitzky-Golay filter to smooth the positional data while preserving the shape of the underlying motion curve — critical for producing realistic acceleration graphs.
+
+**Velocity & Acceleration**
+Implemented numerical differentiation on the smoothed positional data to calculate instantaneous velocity and acceleration at each frame. This is the same mathematical principle used in real motion-capture systems.
+
+**Real-World Calibration**
+Built a pixels-to-meters calibration feature so all output is in SI units rather than raw pixel displacement. The user sets a known reference length in the video and the system scales all measurements accordingly.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Computer Vision & Math Engine | Python — NumPy, SciPy, OpenCV |
+| Frontend | React 19, Tailwind CSS 4 |
+| Backend | TypeScript, MySQL |
+| Data Visualization | Plotly.js (synchronized multi-axis charts) |
+
+---
+
+## Running Locally
+
+The live demo is currently offline to minimize hosting costs. To run DeltaV locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/DeltaV-2026-April-5
+
+# Extract the source archive
+unzip DeltaV_MegaFile.zip
+
+# Install Python dependencies
+pip install numpy scipy opencv-python
+
+# Install frontend dependencies
+cd frontend
+npm install
+
+# Start the development server
+npm run dev
+```
+
+---
+
+## Agent State (.skill file)
+
+The `.skill` file in this repository is a saved AI agent state — it captures the full context, logic, and development history of the AI assistant used during this project. Pasting it into a compatible session restores the exact working context, making it easy to resume or extend the project without re-explaining the architecture from scratch.
+
+---
+
+## What I Learned
+
+Building DeltaV pushed me to connect disciplines I had only studied separately — applying calculus concepts like differentiation to real video data, handling the gap between theoretical physics and messy real-world inputs, and architecting a system where a Python math engine communicates with a modern web frontend. The hardest problem was not the math itself but making the math *robust* — understanding why raw data fails and what signal processing techniques fix it.
+
+---
+
+## About
+
+Built by Youbo (Damon) Bao — a student developer at Ridley College exploring the intersection of applied physics and software engineering.
