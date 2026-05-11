@@ -82,4 +82,4 @@ The interesting problems here were not the math concepts themselves but making t
 
 ## About
 
-Built by Youbo (Damon) Bao, a student developer at Ridley College interested in applied physics and software engineering.
+Built by Youbo (Damon) Bao, a student developer at Ridley College interested in applied physics and engineering.
