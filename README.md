@@ -50,7 +50,7 @@ The live demo is offline to keep hosting costs down. To run it on your own machi
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/DeltaV-2026-April-5
+git clone https://github.com/DamonB2011/DeltaV-2026-April-5
 
 # Extract the source archive
 unzip DeltaV_MegaFile.zip
