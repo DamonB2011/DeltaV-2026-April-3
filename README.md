@@ -32,6 +32,3 @@ The biggest challenge was making the data accurate despite shaky hands or low-qu
 Since this was my first deep dive into full-stack development, I used an AI-assisted workflow (Manus.AI) to help me architect the system. This process taught me how to connect a Python math engine to a modern web interface and how to handle complex database issues like asynchronous processing.
 
 
-
-## 📝 License
-This design is intended for the VRC community. Please credit 1509R if you use elements of this DR4B or Claw geometry.
