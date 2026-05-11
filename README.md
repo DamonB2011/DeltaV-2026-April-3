@@ -1,6 +1,6 @@
-# DeltaV — AI-Powered Kinematics Engine
+# DeltaV: AI-Powered Kinematics Engine
 
-> Turn any physics video into accurate motion graphs — automatically.
+> Upload a physics video. Get back motion graphs in real-world units.
 
 ![Project Status](https://img.shields.io/badge/status-archived-lightgrey)
 ![Python](https://img.shields.io/badge/python-3.x-blue)
@@ -11,27 +11,25 @@
 
 ## What It Does
 
-DeltaV takes a regular video of a physics experiment — a ball throw, a pendulum, a rolling object — and automatically extracts real-world motion data from it. Instead of manually timing with stopwatches or measuring with rulers, you upload a video and get back synchronized velocity and acceleration graphs in real-world units.
+DeltaV takes a regular video of a physics experiment (a ball throw, a pendulum, a rolling object) and extracts real-world motion data from it automatically. You upload the video, set a calibration reference, and get back synchronized velocity and acceleration graphs in SI units. No stopwatch. No ruler. No manual data entry.
 
-The core problem it solves: **raw video data is noisy and pixel-based.** DeltaV handles both.
+The hard part was not the tracking. Raw video data is noisy and pixel-based, and turning it into clean, accurate physics output required solving both problems separately.
 
 ---
 
-## The Physics & Math
-
-The engineering challenge was making the output accurate despite shaky footage, low resolution, and inconsistent lighting. Here is how each problem was solved:
+## The Physics and Math
 
 **Object Tracking**
-Used OpenCV with CSRT and MOG2 algorithms to track an object's center of mass frame-by-frame — more robust than simple color detection, which fails under changing light conditions.
+OpenCV's CSRT and MOG2 algorithms track the object's center of mass across frames. This is more reliable than color-based detection, which breaks under changing light conditions.
 
 **Noise Reduction**
-Raw tracking data contains significant jitter. Applied a Savitzky-Golay filter to smooth the positional data while preserving the shape of the underlying motion curve — critical for producing realistic acceleration graphs.
+Raw positional data from video has a lot of jitter. A Savitzky-Golay filter smooths it out while keeping the shape of the motion curve intact. Without this step, the acceleration graphs are unreadable.
 
-**Velocity & Acceleration**
-Implemented numerical differentiation on the smoothed positional data to calculate instantaneous velocity and acceleration at each frame. This is the same mathematical principle used in real motion-capture systems.
+**Velocity and Acceleration**
+The code runs numerical differentiation on the smoothed data to get instantaneous velocity and acceleration at each frame. Same principle used in real motion-capture pipelines.
 
-**Real-World Calibration**
-Built a pixels-to-meters calibration feature so all output is in SI units rather than raw pixel displacement. The user sets a known reference length in the video and the system scales all measurements accordingly.
+**Calibration**
+A pixels-to-meters feature lets you set a known reference length in the video. Every output value scales to that reference, so the graphs show meters and meters per second rather than pixels.
 
 ---
 
@@ -39,16 +37,16 @@ Built a pixels-to-meters calibration feature so all output is in SI units rather
 
 | Layer | Technology |
 |-------|-----------|
-| Computer Vision & Math Engine | Python — NumPy, SciPy, OpenCV |
+| Computer Vision and Math | Python, NumPy, SciPy, OpenCV |
 | Frontend | React 19, Tailwind CSS 4 |
 | Backend | TypeScript, MySQL |
-| Data Visualization | Plotly.js (synchronized multi-axis charts) |
+| Visualization | Plotly.js |
 
 ---
 
 ## Running Locally
 
-The live demo is currently offline to minimize hosting costs. To run DeltaV locally:
+The live demo is offline to keep hosting costs down. To run it on your own machine:
 
 ```bash
 # Clone the repository
@@ -72,16 +70,16 @@ npm run dev
 
 ## Agent State (.skill file)
 
-The `.skill` file in this repository is a saved AI agent state — it captures the full context, logic, and development history of the AI assistant used during this project. Pasting it into a compatible session restores the exact working context, making it easy to resume or extend the project without re-explaining the architecture from scratch.
+The `.skill` file is a saved AI agent state. It stores the full context and logic from the AI assistant used during this project. Pasting it into a new session restores that context so you can pick up exactly where the project left off without re-explaining the architecture.
 
 ---
 
 ## What I Learned
 
-Building DeltaV pushed me to connect disciplines I had only studied separately — applying calculus concepts like differentiation to real video data, handling the gap between theoretical physics and messy real-world inputs, and architecting a system where a Python math engine communicates with a modern web frontend. The hardest problem was not the math itself but making the math *robust* — understanding why raw data fails and what signal processing techniques fix it.
+The interesting problems here were not the math concepts themselves but making them work on real input. Smoothing noisy data, calibrating pixel space to physical units, getting a Python math engine to talk to a React frontend, handling async database writes without dropping frames. Each piece was straightforward in isolation. Getting them to work together reliably took a lot of iteration.
 
 ---
 
 ## About
 
-Built by Youbo (Damon) Bao — a student developer at Ridley College exploring the intersection of applied physics and software engineering.
+Built by Youbo (Damon) Bao, a student developer at Ridley College interested in applied physics and software engineering.
